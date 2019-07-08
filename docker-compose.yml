@@ -1,0 +1,19 @@
+version: '3'
+services:
+  terraria:
+    build:
+      dockerfile: docker/terraria/Dockerfile
+      context: .
+    container_name: terraria_server
+#    working_dir: /server
+    volumes:
+      - .:/server
+    ports:
+      - '7777:7777'
+      - '7878:7878'
+    networks:
+      - network
+    tty: true
+networks:
+  network:
+    driver: bridge
