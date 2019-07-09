@@ -1,5 +1,3 @@
 #!/bin/sh
 
-cd ../
-
-mono --server --gc=sgen -O=all TerrariaServer.exe -world 01.wld -autocreate 2 -configpath "/config" -worldpath "/world"
+mono --server --gc=sgen -O=all TerrariaServer.exe -world /server/world/01.wld -configpath "/server/config" -worldpath "/server/world/01.wld"

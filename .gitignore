@@ -1,3 +1,5 @@
 ###> JetBrains
 .idea/
-###< JetBrains
+
+###> worlds
+/tshock/world
