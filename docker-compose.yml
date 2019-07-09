@@ -10,11 +10,4 @@ services:
       - ./tshock/world:/server/world
     ports:
       - '7777:7777'
-      - '7878:7878'
-    networks:
-      - network
     tty: true
-
-networks:
-  network:
-    driver: bridge
