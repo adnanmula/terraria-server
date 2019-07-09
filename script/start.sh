@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd ../tshock/tshock_4.3.26
+cd ../
 
-mono --server --gc=sgen -O=all TerrariaServer.exe -world 01.wld -autocreate 2 -configpath "/tshock/config"
+mono --server --gc=sgen -O=all TerrariaServer.exe -world 01.wld -autocreate 2 -configpath "/config" -worldpath "/world"

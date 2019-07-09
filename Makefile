@@ -3,8 +3,11 @@ GID=$(shell id -g)
 FILE=docker-compose.yml
 CONTAINER=terraria
 
-bash: ## enter inside php bash
+bash: ## enter inside container bash
 	docker-compose -f ${FILE} exec --user=${UID} ${CONTAINER} sh
+
+bash-root: ## enter inside container bash as root
+	docker-compose -f ${FILE} exec ${CONTAINER} sh
 
 build: ## build dockers
 	docker-compose -f ${FILE} build
