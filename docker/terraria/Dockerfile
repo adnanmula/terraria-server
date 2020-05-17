@@ -8,7 +8,7 @@ RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/ed
 
 RUN mkdir /server
 
-RUN curl -sL "https://github.com/Pryaxis/TShock/releases/download/v4.3.26/tshock_4.3.26.zip" -o "/tmp/tshock.zip" && \
+RUN curl -sL "https://terraria.org/system/dedicated_servers/archives/000/000/036/original/terraria-server-1402.zip" -o "/tmp/server.zip" && \
     unzip "/tmp/tshock.zip" -d /server && \
     rm "/tmp/tshock.zip"
 COPY tshock/config/config.json /server/config/config.json
