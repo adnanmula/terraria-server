@@ -5,6 +5,8 @@ RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/ed
     cert-sync /etc/ssl/certs/ca-certificates.crt && \
     apk del .build-dependencies
 
+RUN apk add --no-cache curl
+
 RUN mkdir /server
 
 RUN curl -sL "https://terraria.org/system/dedicated_servers/archives/000/000/036/original/terraria-server-1402.zip" -o "/tmp/tshock.zip" && \
