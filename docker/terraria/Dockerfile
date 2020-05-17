@@ -14,4 +14,4 @@ RUN curl -sL "https://terraria.org/system/dedicated_servers/archives/000/000/036
 COPY tshock/config/config.json /server-test/config/config.json
 COPY script/start.sh /server-test/script/start.sh
 
-RUN chmod +x /server/script/start.sh
+RUN chmod +x /server-test/script/start.sh
