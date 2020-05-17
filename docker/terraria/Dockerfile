@@ -6,12 +6,14 @@ RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/ed
     apk add --no-cache curl && \
     apk del .build-dependencies
 
-RUN mkdir /server-test
+RUN mkdir /server
 
 RUN curl -sL "https://terraria.org/system/dedicated_servers/archives/000/000/036/original/terraria-server-1402.zip" -o "/tmp/tshock.zip" && \
-    unzip "/tmp/tshock.zip" -d /server-test && \
+    unzip "/tmp/tshock.zip" -d /server && \
     rm "/tmp/tshock.zip"
-COPY tshock/config/config.json /server-test/config/config.json
-COPY script/start.sh /server-test/script/start.sh
+COPY tshock/config/config.json /server/config/config.json
+COPY script/start.sh /server/script/start.sh
+RUN mv /server/1402/Linux/* /server 
+RUN rm -rf /server/1402
 
-RUN chmod +x /server-test/script/start.sh
+RUN chmod +x /server/script/start.sh
