@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y zip curl && apt-get clean
 #echo "deb https://download.mono-project.com/repo/debian stable-buster main" | tee /etc/apt/sources.list.d/mono-official-stable.list \
 
 RUN apt install apt-transport-https dirmngr gnupg ca-certificates \
-	apt update \
-	apt install mono-complete
+	apt-get update \
+	apt-get install mono-complete
 
 #RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
 #    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
