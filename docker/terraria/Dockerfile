@@ -1,14 +1,18 @@
-FROM debian
+FROM ubuntu:14.04.4
 
-RUN apt-get update && apt-get install -y zip curl && apt-get clean 
+RUN apt-get update && apt-get install -y unzip \
+	apt install apt-transport-https dirmngr gnupg ca-certificates \
+	apt-get install -y mono-complete \
+	apt-get update \
+	apt-get install -y curl
 
 #apt install apt-transport-https dirmngr gnupg ca-certificates \
 #apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
 #echo "deb https://download.mono-project.com/repo/debian stable-buster main" | tee /etc/apt/sources.list.d/mono-official-stable.list \
 
-RUN apt install apt-transport-https dirmngr gnupg ca-certificates \
-	apt-get update \
-	apt-get install mono-complete
+#RUN apt install apt-transport-https dirmngr gnupg ca-certificates \
+#	apt-get update \
+#	apt-get install mono-complete
 
 #RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
 #    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
