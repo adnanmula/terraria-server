@@ -1,6 +1,6 @@
 FROM debian
 
-RUN apt-get update && apt-get install -y zip wget && apt-get clean 
+RUN apt-get update && apt-get install -y zip curl && apt-get clean 
 
 #RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
 #    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
