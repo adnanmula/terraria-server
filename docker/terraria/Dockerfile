@@ -1,15 +1,13 @@
-FROM alpine:3.11
+FROM debian
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-
-RUN apk update && apk upgrade && apk add mono
+RUN apt-get update && apt-get install -y zip wget && apt-get clean 
 
 #RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
 #    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
 #    cert-sync /etc/ssl/certs/ca-certificates.crt && \
 #    apk del .build-dependencies
 
-RUN apk add --no-cache curl
+#RUN apk add --no-cache curl
 
 RUN mkdir /server
 
