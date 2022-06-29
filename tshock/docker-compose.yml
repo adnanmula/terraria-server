@@ -1,13 +1,14 @@
 version: '3'
 services:
-  terraria:
+  terraria-tshock:
     build:
-      dockerfile: docker/vanilla/Dockerfile
+      dockerfile: docker/Dockerfile
       context: .
-    container_name: terraria_server
+    container_name: terraria_tshock_server
     working_dir: /server
     volumes:
-      - ./tshock/world:/server/world
+      - ./world:/server/world
     ports:
       - '7777:7777'
     tty: true
+    

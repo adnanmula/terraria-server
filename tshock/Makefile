@@ -1,7 +1,7 @@
 UID=$(shell id -u)
 GID=$(shell id -g)
 FILE=docker-compose.yml
-CONTAINER=terraria
+CONTAINER=terraria-tshock
 
 bash: ## enter inside container bash
 	docker-compose -f ${FILE} exec --user=${UID} ${CONTAINER} sh
